@@ -1,0 +1,20 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: bar-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bar-app
+  template:
+    metadata:
+      labels:
+        app: bar-app
+    spec:
+      containers:
+      - name: bar-container
+        image: whatwant/node-web:1.0
+        ports:
+        - containerPort: 8080

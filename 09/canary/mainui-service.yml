@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mainui-svc
+spec:
+  selector:
+    app:  mainui
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
